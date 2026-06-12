@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM EXERCISE 02</title>
+  <style>
+  .active-status {
+    border: 3px solid rgb(208, 110, 238);
+    background-color: #137787;
+    border-radius: 20px;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <div id="profileCard">
+    <img id="profileImage" src="https://placehold.co/100x100">
+    <h2 id="profileName">John Doe</h2>
+    <p id="profileRole">Sofware Developer</p>
+    <p id="profileBio">Passionate about coding and learning new technologies.</p>
+    <button id="updateNameBtn">Update Name</button>
+    <button id="updateRoleBtn">Update Role</button>
+    <button id="toggleStatusBtn">Toggle Active Status</button>
+    <button id="changeImageBtn">Change Image</button>
+  </div>
+  <script>
+  document.getElementById('updateNameBtn').addEventListener('click', () => {
+    const newName = prompt('Enter new name:');
+    if (newName) {
+      document.getElementById('profileName').textContent = newName;
+    }
+  });
+
+  document.getElementById('updateRoleBtn').addEventListener('click', function () {
+    const newRole = prompt('Enter a new role:');
+    if (newRole) {
+      document.getElementById('profileRole').textContent =newRole;
+    }
+  });
+
+  document.getElementById('toggleStatusBtn').addEventListener('click', function () {
+    document.getElementById('profileCard').classList.toggle('active-status');
+  });
+
+  document.getElementById('changeImageBtn').addEventListener('click', () => {
+  const newUrl = prompt("Enter new image URL:");
+  if (newUrl) {
+    document.getElementById('profileImage').src = newUrl;
+  }
+});
+  </script>
+  
+</body>
+</html>
